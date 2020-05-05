@@ -1,0 +1,237 @@
+\documentclass{beamer}
+
+\newcommand{\darkLogo}{$\vcenter{\includegraphics{tallogo-dark.pdf}}$}
+
+\usefonttheme{serif}
+\usepackage[no-math]{fontspec}
+\usepackage{amsmath,amsfonts,amssymb,stmaryrd}
+
+\def\yo{\text{y}}
+\def\pto{\rightsquigarrow}
+\def\Prof{\textbf{Prof}}
+\def\Lan{\text{Lan}}
+
+\definecolor{bleakYellow}{HTML}{F0DB4F}
+\setmainfont{Source Sans Pro}
+
+\usetheme[background=dark]{metropolis}
+\setbeamercolor{alerted text}{fg=bleakYellow}
+
+\setbeamertemplate{footline}{}
+
+\author{Fosco Loregian \darkLogo}
+\title{XYZ}
+\date{\today}
+
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage[all,2cell]{xy}\UseAllTwocells
+
+\begin{document}
+\begin{frame}
+  \begin{itemize}
+    \item Ph.D. at SISSA - Trieste \includegraphics{ita.pdf}
+
+    \indent {\footnotesize Stable homotopy theory, ∞-categories, derived AG}
+    \item University of Western Ontario \includegraphics[scale=.04]{can.pdf}
+    
+    \indent {\footnotesize ∞-categories, derivators}
+    \item Masaryk University \includegraphics{czr.pdf}
+    
+    \indent {\footnotesize Accessible categories, derivators, 2-categories}
+    \item Max Planck Inst. für Math. \includegraphics{ger.pdf}
+    
+    \indent {\footnotesize 2-categories, derivators, applied category theory}
+    \item Centro de Matemàtica da Universidade de Coimbra \includegraphics[scale=.04]{por.pdf}
+    
+    \indent {\footnotesize 2-categories; finishing my first book}
+    \item Tallinna Tehnikaülikooli \includegraphics{est.pdf}
+    
+    \indent {\footnotesize 2-categories; functorial semantics; categorical probability theory and its applications}
+  \end{itemize}
+\end{frame}
+%
+%
+%
+%
+%
+\begin{frame}
+  \Huge\centering \bfseries STABLE HOMOTOPY THEORY
+\end{frame}
+%
+\begin{frame}
+  \alert{∞-categories}: a thickening of the notion of category, suitable for homotopy-invariant mathematics (algebraic geometry, algebraic topology type theory).
+  
+  Turns out some parts of Mathematics are easier if stated in these terms:
+  \begin{itemize}
+    \item homological algebra : the scary part of algebraic topology 
+    
+    {\footnotesize higher algebra: the linear algebra of ∞-categories}
+    \item 1-topos theory : a synthetic type theory,
+    
+    {\footnotesize ∞-topos theory: a synthetic homotopy theory of homotopy types}
+  \end{itemize}
+\end{frame}
+%
+%
+%
+%
+%
+\begin{frame}
+  A stable ∞-category is an ∞-category
+
+with all finite limits and colimits
+such that a square is cartesian iff cocartesian
+
+The homotopy category of a stable ∞-cat is always triangulated
+
+The correspondence sending an abelian A into its derived category has a nice and clear universal property
+
+Stable, rational, p-adic, ...  homotopy theory are pieces of commutative algebra of  ∞-categories
+\end{frame}
+%
+%
+%
+%
+%
+\begin{frame}
+  A t-structure on D triangulated is a pair of triangulated subcategories of D such that every object X lies in a sequence
+\[...\]
+[FL14] : On stable ∞-cats a t-structure is a factorization system (E,M)
+\begin{itemize}
+\item such that E and M are 3-for-2 classes
+\item thus the category of E-cofibrant objects is coreflective
+\item and the category of M-fibrant objects is reflective
+\item cof/fib replacement are neg/pos truncation
+\end{itemize}
+(Algebraic) geometry reduces to a piece of categorical algebra.
+\end{frame}
+%
+%
+%
+\begin{frame}{Plan: redo $t$-structures}
+[FL15] On the set of t-structures there is a natural choice of Z-action (Z = the integers); study Z-equivariant monotone maps from a poset J to TS(C).
+
+Bridgeland stability manifolds, Postnikov towers on ∞-toposes
+
+[FL15b] Every stratified manifold (X,s) generates a pair of t-structure that can be glued together
+
+recollements, stratified schemes, representation of algebras
+
+Project: algebraic geometry is easier, with factorization systems.
+
+Rational and p-adic homotopy ~ rational and p-adic geometry ~ number-theoretic factorization systems
+
+\end{frame}
+%
+%
+%
+%
+%
+\begin{frame}{Every PhD finishes with two conjectures\dots}
+ \[\{ J \colon \mathbb R \to TS(\mathcal C) \mid J \text{ is Sorgenfrey continuous} \}\] 
+ is an interesting set [FL-PhD]
+
+ \[\{ J \colon \text{Spec}(\mathbb Z) \to TS(\mathcal C) \mid J \text{ is Zariski continuous} \}\]
+
+ Blakers-Massey in char p is a thm about factorization systems
+\end{frame}
+%
+%
+%
+%
+\begin{frame}
+  Fact: Bord(n) is the free (∞,n)-symmoncat on the point 
+
+  monoidal functors Z : Bord(n) → Vect are completely classified and used in QFT
+
+  Morse theory is the theory of suitable factorization systems on Bord(n)
+
+  {critical points of a Morse function}
+
+  correspond to
+
+ {critical values of a certain "slicing" J : R → FS(Bord(n))}
+
+ disegno del toro
+\end{frame}
+%
+%
+%
+%
+%
+%
+%
+\begin{frame}
+  \Huge\centering \bfseries DERIVATORS
+\end{frame}
+%
+\begin{frame}
+  A derivator is a strict 2-functor
+  \[\mathbb{D} : {\bf Cat}^\text{op} \to {\bf CAT} \]
+  satisfying sheafy conditions. They form the 2-category Der.
+
+  They subsume most of ∞-category theory; in particular, their stable homotopy.
+  \begin{itemize}
+    \item [LV17] : A t-structure on a stable derivator is still a certain kind of factorization system*
+
+    *And FS are still algebras for the "squaring" 2-monad ( \_ )² : A ↦ A² (see [KT93])
+    
+    \item  [Lor18] : reflective subderivators correspond to reflective factorization systems, and to algebras for idempotent monads
+
+    (the "formal theory of monads" still holds in Der, a monad T : D → D is just defined objectwise)
+  \end{itemize}
+\end{frame}
+%
+\begin{frame}
+  There is a Yoneda structure on the 2-category of derivators
+
+  If this is true
+\begin{itemize}
+\item comprehensive account of various notions of accessible and locally presentable derivator using [DLL18]; categorical logic for derivators; derivator toposes?
+\item a convincing form of adjoint functor theorem for derivators: useful, innit?
+\item profunctors between derivators; fibered derivators; operads in derivator theory; applications in representation theory, stable homotopy, ...
+\end{itemize}
+\end{frame}
+%
+%
+%
+%
+%
+\begin{frame}
+  \Huge\centering \bfseries FORMAL CATEGORY THEORY
+\end{frame}
+%
+\begin{frame}
+  
+\end{frame}
+%
+%
+%
+%
+%
+\begin{frame}
+  \Huge\centering \bfseries 2-CATEGORIES IN FUNCTIONAL PROGRAMMING
+\end{frame}
+%
+\begin{frame}
+  
+\end{frame}
+%
+%
+%
+%
+%
+\begin{frame}
+  \Huge\centering \bfseries 2-CATEGORIES IN PROBABILITY THEORY
+\end{frame}
+%
+\begin{frame}
+  
+\end{frame}
+%
+%
+%
+%
+%
+\end{document}
