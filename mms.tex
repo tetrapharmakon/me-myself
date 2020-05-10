@@ -4,7 +4,9 @@
 \usepackage{wrapfig}
 \usefonttheme{serif}
 \usepackage[no-math]{fontspec}
-\usepackage{amsmath,amsfonts,amssymb,stmaryrd}
+\usepackage{amsmath,amsfonts,amssymb,stmaryrd, fontawesome}
+
+\def\lnk#1{\href{#1}{\faFilePdfO}}
 
 \def\yo{\text{y}}
 \def\pto{\rightsquigarrow}
@@ -25,13 +27,11 @@
 
 \setbeamertemplate{navigation symbols}{}
 
-\usepackage[all,2cell]{xy}\UseAllTwocells
+\hypersetup{colorlinks,linkcolor=,urlcolor=green}
 
 \begin{document}
 \begin{frame}
   \maketitle
-%   \centering
-%   \Huge FOSCO LOREGIAN \\
 \end{frame}
 \begin{frame}
   \begin{itemize}
@@ -39,19 +39,19 @@
 
     \indent {\footnotesize Stable homotopy theory, ∞-categories, derived AG}
     \item<+-> University of Western Ontario \includegraphics[scale=.04]{can.pdf}
-    
+
     \indent {\footnotesize ∞-categories, derivators}
     \item<+-> Masaryk University \includegraphics{czr.pdf}
-    
+
     \indent {\footnotesize Accessible categories, derivators, 2-categories}
     \item<+-> Max Planck Inst. für Math. \includegraphics{ger.pdf}
-    
+
     \indent {\footnotesize 2-categories, derivators, applied category theory}
     \item<+-> Centro de Matemàtica da Universidade de Coimbra \includegraphics[scale=.04]{por.pdf}
-    
+
     \indent {\footnotesize 2-categories; finishing my first book}
     \item<+-> Tallinna Tehnikaülikooli \includegraphics{est.pdf}
-    
+
     \indent {\footnotesize 2-categories; functorial semantics; categorical probability theory and its applications}
   \end{itemize}
 \end{frame}
@@ -65,16 +65,16 @@
 \end{frame}
 %
 \begin{frame}
-  \alert{∞-categories}: a thickening of the notion of category, suitable for homotopy-invariant mathematics (algebraic geometry, algebraic topology type theory).
-  
+  \alert{∞-categories}: a thickening of the notion of category, suitable for homotopy-invariant mathematics (algebraic geometry, algebraic topology, type theory).
+
   \onslide<+->
   Turns out some parts of Mathematics are easier if stated in these terms:
   \begin{itemize}
-    \item homological algebra : the scary part of algebraic topology 
-    
+    \item homological algebra : the scary part of algebraic topology
+
     {\footnotesize higher algebra: the linear algebra of ∞-categories}
     \item 1-topos theory : a synthetic type theory,
-    
+
     {\footnotesize ∞-topos theory: a synthetic homotopy theory of homotopy types}
   \end{itemize}
 \end{frame}
@@ -84,19 +84,19 @@
 %
 %
 \begin{frame}
-  A stable ∞-category is an ∞-category
+  A \alert{stable ∞-category} is an ∞-category
 \begin{itemize}
-\item with all finite limits and colimits
-\item such that a square is cartesian iff cocartesian
+\item with all \alert{finite limits and colimits}
+\item such that a square is \alert{cartesian iff cocartesian}
 \end{itemize}
 \onslide<+->
 The homotopy category of a stable ∞-cat is always triangulated.
 
 \onslide<+->
-The correspondence sending an abelian category $\cal A$ into its derived category has a nice and clear universal property stated in terms of the heart of a canonical $t$-structure.
+The correspondence sending an abelian category $\cal A$ into its derived category has a nice and clear \alert{universal property} stated in terms of the heart of a canonical $t$-structure.
 
 \onslide<+->
-Stable, rational, p-adic, ...  homotopy theory become pieces of the commutative algebra of  ∞-categories
+Stable, rational, $p$-adic, ...  homotopy theory become pieces of the commutative algebra of  ∞-categories.
 \end{frame}
 %
 %
@@ -104,14 +104,14 @@ Stable, rational, p-adic, ...  homotopy theory become pieces of the commutative 
 %
 %
 \begin{frame}
-  A t-structure on a triangulated $\cal D$ is a pair of triangulated subcategories of D such that every object X lies in a sequence
+  A t-structure on a triangulated $\cal D$ is a pair of triangulated subcategories of $\cal D$ such that every object X lies in a sequence
 \[X_{\le} \to X \to X_\ge \to X_\le[1]\]
-[\alert{FL14}] : On stable ∞-categories a t-structure is a factorization system (E,M)
+[\alert{FL14} \lnk{https://link.springer.com/article/10.1007/s10485-015-9393-z}] : On stable ∞-categories a t-structure is a factorization system $(E,M)$
 \begin{itemize}
-\item<+-> such that E and M are 3-for-2 classes
-\item<+-> thus the category of E-cofibrant objects is coreflective
-\item<+-> and the category of M-fibrant objects is reflective
-\item<+-> cof/fib replacement = neg/pos truncation
+\item<+-> such that $E$ and $M$ are 3-for-2 classes
+\item<+-> thus the category of $E$-cofibrant objects is coreflective
+\item<+-> and the category of $M$-fibrant objects is reflective
+\item<+-> cof/fib replacement = $\pm$ truncation
 \end{itemize}
 \onslide<5->
 (Algebraic) geometry reduces to a piece of categorical algebra.
@@ -121,13 +121,13 @@ Stable, rational, p-adic, ...  homotopy theory become pieces of the commutative 
 %
 \begin{frame}{Plan: redo $t$-structures}
   \begin{itemize}
-\item<+-> {} [\alert{FL15}] The set of t-structures has a natural choice of $\mathbb Z$-action ($\mathbb Z$ = the integers); so, study $\mathbb Z$-equivariant monotone maps from a poset J to TS(C).
+\item<+-> {} [\alert{FLM15} \lnk{https://link.springer.com/article/10.1007/s40062-019-00237-0}] The set of t-structures has a natural choice of $\mathbb Z$-action ($\mathbb Z$ = the integers); so, study $\mathbb Z$-equivariant monotone maps from a poset $P$ to $TS(\cal C)$. These are called \alert{slicings}
 
-{\footnotesize This describes Bridgeland stability manifolds, and Postnikov towers on ∞-toposes.}
+{\footnotesize apply to: describe Bridgeland stability manifolds [\alert{L-PhD}], and Postnikov towers on ∞-toposes.}
 
-\item<+-> {} [\alert{FL15b}] Every stratified manifold $(X,\mathfrak s)$ generates a pair of t-structure that can be glued together
+\item<+-> {} [\alert{FL15b} \lnk{https://arxiv.org/abs/1507.03913}] Every stratified manifold $(X,\mathfrak s)$ generates a pair of t-structure that can be glued together
 
-{\footnotesize recollements, stratified schemes, representation of algebras}
+{\footnotesize apply to: recollements, stratified schemes, representation of algebras}
 
   \end{itemize}
 \end{frame}
@@ -136,24 +136,24 @@ Stable, rational, p-adic, ...  homotopy theory become pieces of the commutative 
 %
 %
 %
-\begin{frame}{Plan: redo $t$-structures}\small %{Every PhD finishes with two conjectures\dots}
-  %  In [\alert{FL?}, work in progress] Rational and $p$-adic homotopy ~ rational and $p$-adic geometry ~ ``number-theoretic'' factorization systems:
-
+\begin{frame}{Plan: redo $t$-structures}\small
    \begin{itemize}
      \item<+-> The space of \alert{slicings} on a stable ∞-category is a metric space and
-     
-     \item<+-> The space \[\{ J \colon \mathbb R \to TS(\mathcal C) \mid J \text{ is Sorgenfrey continuous} \}\] 
+
+     \item<+-> The space \[\{ J \colon \mathbb R \to TS(\mathcal C) \mid J \text{ is Sorgenfrey continuous} \}\]
      is an interesting set [\alert{L-PhD}]
     \end{itemize}
 
     \onslide<+->
     \begin{block}{Conjecture}
+\vspace{.5mm}
   Study
 \[\{ J \colon \text{Spec}(\mathbb Z) \to TS(\mathcal C) \mid J \text{ is Zariski continuous} \}\]
 to get something about motivic t-structure.
  \end{block}
  \onslide<+->
  \begin{block}{Conjecture}
+\vspace{.5mm}
  Blakers-Massey in positive characteristic is a theorem about factorization systems.
  \end{block}
 \end{frame}
@@ -165,9 +165,9 @@ to get something about motivic t-structure.
   \begin{wrapfigure}[5]{l}{.5\textwidth}
 \includegraphics[scale=.15]{3D-Leveltorus-Reebgraph.png}
   \end{wrapfigure}
-  
+
   Fact: Bord(n) is the free (∞,n)-symmoncat on the point.
-  
+
   \vspace{1cm}
   Monoidal functors $Z : Bord(n) \to Vect$ are completely classified.
 
@@ -192,17 +192,17 @@ to get something about motivic t-structure.
 \end{frame}
 %
 \begin{frame}
-  A derivator is a strict 2-functor
+  A \alert{derivator} is a strict 2-functor
   \[\mathbb{D} : {\bf Cat}^\text{op} \to {\bf CAT} \]
-  satisfying stacky conditions. They form the 2-category Der.
+  satisfying stacky conditions. They form the 2-category \textbf{Der}.
 
   They subsume most of ∞-category theory; in particular, their stable homotopy.
   \begin{itemize}
-    \item<2-> [{[\alert{LV17}]}] : A t-structure on a stable derivator is still a certain kind of factorization system; FS are still strict 2-algebras for the "squaring" 2-monad ( \_ )² : A mapsto A² (see [\emph{KT93}])
-    
+    \item<2-> [{[\alert{LV17}]}] : A t-structure on a stable derivator is still a certain kind of factorization system; FS are still \alert{strict 2-algebras} for the "squaring" 2-monad ( \_ )² : $\cal A \mapsto \cal A^2$ (see [\emph{KT93}])
+
     \item<3->  [{[\alert{Lor18}]}] : reflective subderivators correspond to reflective factorization systems, and to algebras for idempotent monads
 
-    (the "formal theory of monads" [\emph{S80}] still holds in Der, a monad $T : D \to D$ is just defined objectwise)
+    (the \alert{formal theory of monads} [\emph{S80}] still holds in \textbf{Der}, a monad $T : D \to D$ is just defined objectwise)
   \end{itemize}
 \end{frame}
 %
@@ -227,7 +227,7 @@ to get something about motivic t-structure.
 \end{frame}
 %
 \begin{frame}
-  I have written a book on \alert{coend calculus}, soon to appear under Cambridge University Press LNMs:
+  I have written a \href{https://arxiv.org/pdf/1501.02503}{book} on \alert{coend calculus}, soon to appear under Cambridge LNSs:
 \begin{wrapfigure}{l}{.35\textwidth}
   \includegraphics[width=.35\textwidth]{cover-2-.pdf}
 \end{wrapfigure}
@@ -259,14 +259,20 @@ to get something about motivic t-structure.
   \Huge\centering \bfseries TEACHING AND ORGANIZATIONAL ACTIVITIES
 \end{frame}
 %
-\begin{frame}\small
+\begin{frame}{Teaching}\small
   \begin{itemize}
-    \item<+-> 2015 A short course on \alert{model categories} at the University of Pavia
-    \item<+-> 2015 and 2019 Attendee and speaker at the \alert{Kan Seminar I} (a webinar on category theory), and \alert{Applied Category Theory} 2019 (a webinar on applied category theory, from which the paper [\alert{MLR$^{+}$20}] stemmed)
-    \item<+-> 2016 ``\alert{Elements of Finite Mathematics}'' at UWO (mostly statistics to kinesiologists)
-    \item<+-> 2016 \alert{Advisor} of a BSc thesis @unibo, "Elementary aspects of adjoint functors" 
-    \item<+-> 2018 \alert{Organiser} of the 103rd Peripathetic Seminar on Sheaves and Logic, Brno
-    \item<+-> 2020 \alert{Category theory} course Teacher @taltech
+    \item<+-> 2015 A short course on \alert{model categories} at the University of Pavia;
+    \item<+-> 2016 ``\alert{Elements of Finite Mathematics}'' at UWO (mostly statistics to kinesiologists).
+    \item<+-> 2016 \alert{Advisor} of a BSc thesis @unibo, "Elementary aspects of adjoint functors". I liked it!
+    \item<+-> 2018 A short course on \alert{2-category theory} in Padova: monoidal and enriched, categories, the calculus of coends and Kan extensions, bicategories, monads...
+    \item<+-> 2020 \alert{Category theory} course Teacher @taltech. Mentoring activity for MSc students interested in category theory in CS.
+\end{itemize}
+\end{frame}
+\begin{frame}{Organisation of conferences}\small
+  \begin{itemize}
+    \item<+-> 2015 and 2019 Attendee and speaker at the \alert{Kan Seminar I} (a webinar on category theory),
+    \item<+-> and \alert{Applied Category Theory} 2019 (a webinar on applied category theory, from which the paper [\alert{MLR$^{+}$20}] stemmed)
+    \item<+-> 2018 \alert{Organiser} of the 103rd Peripathetic Seminar on Sheaves and Logic, Brno.
     \item<+-> 2019 and 2020 \alert{Organiser} of ItaCa (\alert{Ita}lian \alert{Ca}tegory theorists) in Milan and on zoom, due to COVID19.
     \item<+-> Reviewer for zbMath and AMS.
   \end{itemize}
@@ -279,17 +285,35 @@ to get something about motivic t-structure.
 %
 %
 \begin{frame}{Miscellaneous projects}
-\small 
+\small
 \begin{itemize}
-  \item<+-> Homotopy theory and set theory: [\alert{DL18}] no homotopy category of a model category is ``concrete''; what about $\infty$-categories?
+  \item<+-> Homotopy theory and set theory: [\alert{DL18}] no homotopy category of a model category is ``concrete''; what about ∞-categories?
   \item<+-> Functional programming and type theory: HoTT, linear types, proof-checkers, categorical algebra in relational database architecture; natural language processing using category theory\dots
-  \item<+-> Categorical logic and foundations of mathematics; functorial semantics à la Lawvere, but sprinkled with operads
+  \item<+-> Categorical logic and foundations of mathematics; functorial semantics \emph{à la} Lawvere, but sprinkled with operads and multicategories.
   \item<+-> more in detail, ``2-semantics'' of algebraic theories: profunctorial PROPs and theories, categorical algebra of cartesian bicategories\dots
 \end{itemize}
 \end{frame}
 %
 \begin{frame}
-  
+\begin{itemize}
+\item Reach me out at \href{http://tetrapharmakon.github.io}{my web page}:
+\begin{center}
+\href{http://tetrapharmakon.github.io}{
+\includegraphics[width=.25\textwidth]{crop1.png}
+}
+\end{center}
+\item I'm quite open about my projects:
+\begin{center}
+  \href{https://github.com/tetrapharmakon}{\faGithub \kern1em tetrapharmakon}
+\end{center}
+\item Taltech has an extremely active \href{https://compose.ioc.ee}{ongoing CT seminar}:
+\begin{center}
+\href{https://compose.ioc.ee}{
+\includegraphics[width=.3\textwidth]{crop2.png}
+}
+\end{center}
+Reach us out!
+\end{itemize}
 \end{frame}
 %
 %
