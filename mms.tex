@@ -33,7 +33,7 @@
 \begin{frame}
   \maketitle
 \end{frame}
-\begin{frame}
+\begin{frame}{Past \& present positions}
   \begin{itemize}
     \item<+-> Ph.D. at SISSA - Trieste \includegraphics{ita.pdf}
 
@@ -65,17 +65,17 @@
 \end{frame}
 %
 \begin{frame}
-  \alert{∞-categories}: a thickening of the notion of category, suitable for homotopy-invariant mathematics (algebraic geometry, algebraic topology, type theory).
+  \alert{∞-categories}: a thickening of the notion of category, suitable for homotopy-coherent mathematics (math.AG, math.AT, math.LO, cs.PL\dots).
 
-  \onslide<+->
+  \onslide<2->
   Turns out some parts of Mathematics are easier if stated in these terms:
   \begin{itemize}
-    \item homological algebra : the scary part of algebraic topology
+    \item<+-> {\footnotesize \color{gray!60} homological algebra : the scary part of algebraic topology}
 
-    {\footnotesize higher algebra: the linear algebra of ∞-categories}
-    \item 1-topos theory : a synthetic type theory,
+    \lnk{www.blank.com}{\color{green} higher algebra}: the linear algebra of ∞-categories
+    \item<+-> {\footnotesize \color{gray!60} 1-topos theory : a synthetic type theory}
 
-    {\footnotesize ∞-topos theory: a synthetic homotopy theory of homotopy types}
+    \lnk{www.blank.com}{\color{green} ∞-topos theory}: a synthetic homotopy theory of homotopy types
   \end{itemize}
 \end{frame}
 %
@@ -103,8 +103,8 @@ Stable, rational, $p$-adic, ...  homotopy theory become pieces of the commutativ
 %
 %
 %
-\begin{frame}
-  A t-structure on a triangulated $\cal D$ is a pair of triangulated subcategories of $\cal D$ such that every object X lies in a sequence
+\begin{frame}{Each PhD starts with a question}
+  A \alert{t-structure} on a triangulated $\cal D$ is a pair of triangulated subcategories of $\cal D$ such that every object X lies in a sequence
 \[X_{\le} \to X \to X_\ge \to X_\le[1]\]
 [\alert{FL14} \lnk{https://link.springer.com/article/10.1007/s10485-015-9393-z}] : On stable ∞-categories a t-structure is a factorization system $(E,M)$
 \begin{itemize}
@@ -114,7 +114,7 @@ Stable, rational, $p$-adic, ...  homotopy theory become pieces of the commutativ
 \item<+-> cof/fib replacement = $\pm$ truncation
 \end{itemize}
 \onslide<5->
-(Algebraic) geometry reduces to a piece of categorical algebra.
+% (Algebraic) geometry reduces to a piece of categorical algebra.
 \end{frame}
 %
 %
@@ -161,18 +161,18 @@ to get something about motivic t-structure.
 %
 %
 %
-\begin{frame}{Morse theory as a theory of FS}
+\begin{frame}{Todo: Morse theory is a theory of FS}
   \begin{wrapfigure}[5]{l}{.5\textwidth}
 \includegraphics[scale=.15]{3D-Leveltorus-Reebgraph.png}
   \end{wrapfigure}
 
-  Fact: Bord(n) is the free (∞,n)-symmoncat on the point.
+  \onslide<2->$\textbf{Bord}(n)$ is the free (∞,\emph{n})-symmoncat on the point.
 
   \vspace{1cm}
-  Monoidal functors $Z : Bord(n) \to Vect$ are completely classified.
+  \onslide<3->Tensor~functors $Z : Bord(n) \to Vect$ are completely classified.
 
   \vspace{1cm}
-  \onslide<+->
+  \onslide<4->
   Morse theory is the theory of suitable factorization systems on Bord(n).
 
   \alert{critical points of a Morse function}
@@ -191,14 +191,14 @@ to get something about motivic t-structure.
   \Huge\centering \bfseries DERIVATORS
 \end{frame}
 %
-\begin{frame}
+\begin{frame}{The formal category theory of derivators}
   A \alert{derivator} is a strict 2-functor
   \[\mathbb{D} : {\bf Cat}^\text{op} \to {\bf CAT} \]
   satisfying stacky conditions. They form the 2-category \textbf{Der}.
 
   They subsume most of ∞-category theory; in particular, their stable homotopy.
   \begin{itemize}
-    \item<2-> [{[\alert{LV17}\lnk{https://www.sciencedirect.com/science/article/abs/pii/S0021869320300296}]}] : A t-structure on a stable derivator is still a certain kind of factorization system; FS are still \alert{strict 2-algebras} for the "squaring" 2-monad ( \_ )² : $\cal A \mapsto \cal A^2$ (see [\emph{KT93}])
+    \item<2-> [{[\alert{LV17}\lnk{https://www.sciencedirect.com/science/article/abs/pii/S0021869320300296}]}] : A t-structure on a stable derivator is still a certain kind of factorization system; FS are still \alert{strict 2-algebras} for the "squaring" 2-monad ( \_ )² : $\mathcal A \mapsto \mathcal A^2$ (see [\emph{KT93}])
 
     \item<3->  [{[\alert{Lor18}\lnk{https://arxiv.org/abs/1802.08193}]}] : reflective subderivators correspond to reflective factorization systems, and to algebras for idempotent monads
 
@@ -206,14 +206,18 @@ to get something about motivic t-structure.
   \end{itemize}
 \end{frame}
 %
-\begin{frame}
+\begin{frame}{The formal category theory of derivators}
   There is a \alert{Yoneda structure}\footnote{A 2-categorical device to encode the calculus of pointwise Kan extensions.} on the 2-category of derivators
-
-  If this is true
 \begin{itemize}
-\item<2-> comprehensive account of various notions of \alert{accessible} and \alert{locally presentable} derivator using the theory of locally presentable objects in a Yoneda structure, done in [\alert{DLL18}]; categorical logic for derivators (see Prest's treatment of \alert{definability} for module categories); derivator topos theory?
-\item<3-> a convincing form of \alert{adjoint functor theorem} for derivators; existence of a six-operation calculus for mappings of derivators. 2-categorical account of Grothendieck duality complicated diagrams...
-\item<4-> \alert{profunctors} between derivators; fibered derivators; \alert{operads} in derivator theory; applications in representation theory of algebras, stable homotopy, ...
+\item<2-> notions of \alert{accessible} and \alert{locally presentable} derivator using the theory of LPAO in a Yoneda structure, done in [\alert{DLL18}\lnk{https://arxiv.org/abs/1804.08710}]; 
+
+{\footnotesize\color{gray!60} categorical logic for derivators (see Prest's treatment of \alert{definability} for module categories); derivator \alert{topos theory}?}
+\item<3-> \alert{adjoint functor theorem}s for derivators; 
+
+{\footnotesize\color{gray!60} existence of a six-operation calculus. 2-categorical account of Grothendieck duality complicated diagrams (without multicategories)}
+\item<4-> \alert{profunctors} between derivators; fibered derivators; 
+
+{\footnotesize\color{gray!60} \alert{operads} in derivator theory; applications in representation theory of algebras, stable homotopy, ...}
 \end{itemize}
 \end{frame}
 %
@@ -261,11 +265,11 @@ to get something about motivic t-structure.
 %
 \begin{frame}{Teaching}\small
   \begin{itemize}
-    \item<+-> 2015 A short course on \alert{model categories} at the University of Pavia;
-    \item<+-> 2016 ``\alert{Elements of Finite Mathematics}'' at UWO (mostly statistics to kinesiologists).
-    \item<+-> 2016 \alert{Advisor} of a BSc thesis @unibo, "Elementary aspects of adjoint functors". I liked it!
-    \item<+-> 2018 A short course on \alert{2-category theory} in Padova: monoidal and enriched, categories, the calculus of coends and Kan extensions, bicategories, monads...
-    \item<+-> 2020 \alert{Category theory} course Teacher @taltech. Mentoring activity for MSc students interested in category theory in CS.
+    \item<+-> 2015 A short course on \alert{model categories} {\color{magenta} @unipv};
+    \item<+-> 2016 ``\alert{Elements of Finite Mathematics}'' {\color{magenta} @uwo} (mostly statistics to kinesiologists).
+    \item<+-> 2016 \alert{Advisor} of a BSc thesis {\color{magenta} @unibo}, "Elementary aspects of adjoint functors". I enjoyed it!
+    \item<+-> 2018 A short course on \alert{2-category theory} {\color{magenta} @unipd}: monoidal and enriched, categories, the calculus of coends and Kan extensions, bicategories, monads...
+    \item<+-> 2020 \alert{Category theory} course Teacher {\color{magenta} @taltech}. Mentoring activity for MSc students interested in category theory in CS.
 \end{itemize}
 \end{frame}
 \begin{frame}{Organisation of conferences}\small
@@ -287,10 +291,18 @@ to get something about motivic t-structure.
 \begin{frame}{Miscellaneous projects}
 \small
 \begin{itemize}
-  \item<+-> Homotopy theory and set theory: [\alert{DL18}] no homotopy category of a model category is ``concrete''; what about ∞-categories?
-  \item<+-> Functional programming and type theory: HoTT, linear types, proof-checkers, categorical algebra in relational database architecture; natural language processing using category theory\dots
-  \item<+-> Categorical logic and foundations of mathematics; functorial semantics \emph{à la} Lawvere, but sprinkled with operads and multicategories.
-  \item<+-> more in detail, ``2-semantics'' of algebraic theories: profunctorial PROPs and theories, categorical algebra of cartesian bicategories\dots
+  \item<+-> Homotopy theory and set theory: [\alert{DL18}\lnk{https://link.springer.com/article/10.1007/s40062-018-0197-3}]
+  
+  {\color{gray!70}\footnotesize  no homotopy category of a model category is ``concrete''; what about ∞-categories?}
+  \item<+-> Functional programming and type theory:
+  
+  {\color{gray!70}\footnotesize  HoTT, linear types, proof-checkers, categorical algebra in relational database architecture; natural language processing using category theory\dots}
+  \item<+-> Categorical logic and foundations of mathematics;
+  
+  {\color{gray!70}\footnotesize  functorial semantics \emph{à la} Lawvere, but sprinkled with operads and multicategories.}
+  \item<+-> more in detail, ``2-semantics'' of algebraic theories: 
+  
+  {\color{gray!70}\footnotesize profunctorial PROPs and theories, categorical algebra of cartesian bicategories\dots}
 \end{itemize}
 \end{frame}
 %
