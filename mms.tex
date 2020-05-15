@@ -4,7 +4,13 @@
 \usepackage{wrapfig}
 \usefonttheme{serif}
 \usepackage[no-math]{fontspec}
-\usepackage{amsmath,amsfonts,amssymb,stmaryrd, fontawesome}
+\usepackage{ amsmath
+           , amsfonts
+           , amssymb
+           , stmaryrd
+           , fontawesome
+           , epigraph
+           }
 
 \def\lnk#1{\href{#1}{\faFilePdfO}}
 
@@ -23,7 +29,7 @@
 
 \author{Fosco Loregian \darkLogo}
 \title{}
-\date{\today}
+\date{}
 
 \setbeamertemplate{navigation symbols}{}
 
@@ -35,7 +41,7 @@
 \end{frame}
 \begin{frame}{Past \& present positions}
   \begin{itemize}
-    \item<+-> Ph.D. at SISSA - Trieste \includegraphics{ita.pdf}
+    \item<+-> Ph.D. at SISSA - Trieste \includegraphics{ita.pdf} (but advisor in Rome)
 
     \indent {\footnotesize Stable homotopy theory, ∞-categories, derived AG}
     \item<+-> University of Western Ontario \includegraphics[scale=.04]{can.pdf}
@@ -119,15 +125,15 @@ Stable, rational, $p$-adic, ...  homotopy theory become pieces of the commutativ
 %
 %
 %
-\begin{frame}{Plan: redo $t$-structures}
+\begin{frame}{Plan: redo $t$-structures (w/ Domenico)}
   \begin{itemize}
 \item<+-> {} [\alert{FLM15} \lnk{https://link.springer.com/article/10.1007/s40062-019-00237-0}] The set of t-structures has a natural choice of $\mathbb Z$-action ($\mathbb Z$ = the integers); so, study $\mathbb Z$-equivariant monotone maps from a poset $P$ to $TS(\cal C)$. These are called \alert{slicings}
 
-{\footnotesize apply to: describe Bridgeland stability manifolds [\alert{L-PhD\lnk{http://tetrapharmakon.github.io/stuff/main.pdf}}], and Postnikov towers on ∞-toposes.}
+{\footnotesize\color{gray!40} apply to: describe Bridgeland stability manifolds [\alert{L-PhD\lnk{http://tetrapharmakon.github.io/stuff/main.pdf}}], and Postnikov towers on ∞-toposes.}
 
 \item<+-> {} [\alert{FL15b} \lnk{https://arxiv.org/abs/1507.03913}] Every stratified manifold $(X,\mathfrak s)$ generates a pair of t-structure that can be glued together
 
-{\footnotesize apply to: recollements, stratified schemes, representation of algebras}
+{\footnotesize\color{gray!40} apply to: recollements, stratified schemes, representation of algebras}
 
   \end{itemize}
 \end{frame}
@@ -136,26 +142,26 @@ Stable, rational, $p$-adic, ...  homotopy theory become pieces of the commutativ
 %
 %
 %
-\begin{frame}{Plan: redo $t$-structures}\small
+\begin{frame}{Plan: redo $t$-structures (w/ Domenico)}\small
    \begin{itemize}
-     \item<+-> The space of \alert{slicings} on a stable ∞-category is a metric space and
+     \item<+-> The set of \alert{slicings} on a stable ∞-category has a metrizable topology
 
      \item<+-> The space \[\{ J \colon \mathbb R \to TS(\mathcal C) \mid J \text{ is Sorgenfrey continuous} \}\]
-     is an interesting set [\alert{L-PhD}]
+     is an interesting set [\alert{L-PhD}\lnk{http://tetrapharmakon.github.io/stuff/main.pdf}]
     \end{itemize}
 
     \onslide<+->
     \begin{block}{Conjecture}
 \vspace{.5mm}
   Study
-\[\{ J \colon \text{Spec}(\mathbb Z) \to TS(\mathcal C) \mid J \text{ is Zariski continuous} \}\]
-to get something about motivic t-structure.
+\[\{ J \colon \text{Spec}(\mathbb Z) \to TS(\mathcal D(X_p)) \mid J \text{ is Zariski continuous} \}\]
+($X_p$ a variety in positive characteristic) to get something about motivic t-structure.
  \end{block}
- \onslide<+->
- \begin{block}{Conjecture}
-\vspace{.5mm}
- Blakers-Massey in positive characteristic is a theorem about factorization systems.
- \end{block}
+%  \onslide<+->
+%  \begin{block}{Conjecture}
+% \vspace{.5mm}
+%  Blakers-Massey in positive characteristic is a theorem about factorization systems.
+%  \end{block}
 \end{frame}
 %
 %
@@ -214,7 +220,7 @@ to get something about motivic t-structure.
 {\footnotesize\color{gray!60} categorical logic for derivators (see Prest's treatment of \alert{definability} for module categories); derivator \alert{topos theory}?}
 \item<3-> \alert{adjoint functor theorem}s for derivators; 
 
-{\footnotesize\color{gray!60} existence of a six-operation calculus. 2-categorical account of Grothendieck duality complicated diagrams (without multicategories)}
+{\footnotesize\color{gray!60} existence of a \alert{six-operation} calculus. 2-categorical account of Grothendieck duality complicated diagrams (without multicategories)}
 \item<4-> \alert{profunctors} between derivators; fibered derivators; 
 
 {\footnotesize\color{gray!60} \alert{operads} in derivator theory; applications in representation theory of algebras, stable homotopy, ...}
@@ -230,7 +236,7 @@ to get something about motivic t-structure.
   \Huge\centering \bfseries COENDS AND DG-STUFF
 \end{frame}
 %
-\begin{frame}
+\begin{frame}{Coends}
   I have written a \href{https://arxiv.org/pdf/1501.02503}{book} on \alert{coend calculus}, soon to appear under Cambridge LNSs:
 \begin{wrapfigure}{l}{.35\textwidth}
   \includegraphics[width=.35\textwidth]{cover-2-.pdf}
@@ -246,7 +252,7 @@ to get something about motivic t-structure.
 %
 %
 %
-\begin{frame}
+\begin{frame}{DG-stuff}
   In [\alert{L20}, 7.2.2]
   \begin{center}
   \includegraphics[width=.75\textwidth]{dg.png}
@@ -274,10 +280,18 @@ to get something about motivic t-structure.
 \end{frame}
 \begin{frame}{Organisation of conferences}\small
   \begin{itemize}
-    \item<+-> 2015 and 2019 Attendee and speaker at the \alert{Kan Seminar I} (a webinar on category theory),
-    \item<+-> and \alert{Applied Category Theory} 2019 (a webinar on applied category theory, from which the paper [\alert{MLR$^{+}$20}] stemmed)
-    \item<+-> 2018 \alert{Organiser} of the 103rd Peripathetic Seminar on Sheaves and Logic, Brno.
-    \item<+-> 2019 and 2020 \alert{Organiser} of ItaCa (\alert{Ita}lian \alert{Ca}tegory theorists) in Milan and on zoom, due to COVID19.
+    \item<+-> 2015 and 2019 Attendee and speaker at the \alert{Kan Seminar I} 
+    
+    {\footnotesize\color{gray!40} a webinar on category theory}
+    \item<+-> and \alert{Applied Category Theory} 2019 
+    
+    {\footnotesize\color{gray!40} (a webinar on applied category theory, from which the paper [\alert{MLR$^{+}$20}\lnk{https://arxiv.org/abs/2001.07488}] stemmed)}
+    \item<+-> 2018 \alert{Organiser} of the 103rd \alert{PSSL}
+    
+    {\footnotesize\color{gray!40} Peripathetic Seminar on Sheaves and Logic, Brno.}
+    \item<+-> 2019 and 2020 Among the \alert{organisers} of ItaCa 
+    
+    {\footnotesize\color{gray!40}  \alert{Ita}lian \alert{Ca}tegory theorists) in Milan and soon on zoom, due to COVID19.}
     \item<+-> Reviewer for zbMath and AMS.
   \end{itemize}
 \end{frame}
@@ -307,25 +321,27 @@ to get something about motivic t-structure.
 \end{frame}
 %
 \begin{frame}
-\begin{itemize}
-\item Reach me out at \href{http://tetrapharmakon.github.io}{my web page}:
+% \begin{itemize}
+Reach me out at \href{http://tetrapharmakon.github.io}{my web page}:
 \begin{center}
 \href{http://tetrapharmakon.github.io}{
-\includegraphics[width=.25\textwidth]{crop1.png}
+\includegraphics[width=.2\textwidth]{crop1.png}
 }
 \end{center}
-\item I'm quite open about my projects:
-\begin{center}
-  \href{https://github.com/tetrapharmakon}{\faGithub \kern1em tetrapharmakon}
-\end{center}
-\item Taltech has an extremely active \href{https://compose.ioc.ee}{ongoing CT seminar}:
-\begin{center}
-\href{https://compose.ioc.ee}{
-\includegraphics[width=.3\textwidth]{crop2.png}
-}
-\end{center}
-Reach us out!
-\end{itemize}
+% \item I'm quite open about my projects:
+% \begin{center}
+%   \href{https://github.com/tetrapharmakon}{\faGithub \kern1em tetrapharmakon}
+% \end{center}
+% \item Taltech has an extremely active \href{https://compose.ioc.ee}{ongoing CT seminar}:
+% \begin{center}
+% \href{https://compose.ioc.ee}{
+% \includegraphics[width=.3\textwidth]{crop2.png}
+% }
+% \end{center}
+% Reach us out!
+% \end{itemize}
+\setlength{\epigraphwidth}{.75\textwidth}
+\epigraph{\footnotesize A human being should be able to change a diaper, plan an invasion, butcher a hog, conn a ship, design a building, write a sonnet, balance accounts, build a wall, set a bone, comfort the dying, take orders, give orders, cooperate, act alone, solve equations, analyze a new problem, pitch manure, program a computer, cook a tasty meal, fight efficiently, die gallantly. Specialization is for insects.}{R. Heinlein}
 \end{frame}
 %
 %
