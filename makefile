@@ -7,10 +7,10 @@ git:
 	bash -c "git push"
 
 load:
-	bash -c "cp mms.pdf ~/tetrapharmakon.github.io/"
-	bash -c "cd ~/tetrapharmakon.github.io/"
-	bash -c "jekyll build"
-	bash -c "git add -A"
-	bash -c "git commit -m 'added mms'"
-	bash -c "git push"
-	bash -c "cd ~/me-myself/"
+	bash -c "cp mms.pdf /home/fouche/tetrapharmakon.github.io/"
+	bash -c "cd /home/fouche/tetrapharmakon.github.io/"
+	# bash -c "jekyll build"
+	# bash -c "git add -A"
+	# bash -c "git commit -m 'added mms'"
+	# bash -c "git push"
+	# bash -c "cd ~/me-myself/"
