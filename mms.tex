@@ -35,6 +35,63 @@
 
 \hypersetup{colorlinks,linkcolor=,urlcolor=green}
 
+\usetikzlibrary{
+    cd, % to make easy commutative diagrams
+    petri, % To draw petri nets
+    backgrounds, % To define image backgrounds
+    arrows, % To use and define further arrow tips
+    positioning, % To use expressions like "right = 1 of 1"
+    decorations.markings, % Needed to define oriented wiring diagrams
+    calc,  % Needed to define oriented wiring diagrams
+    fit, % Needed to compose wiring diagrams
+    shapes.multipart
+  }
+
+\tikzstyle{place}=
+[circle,thick,draw=blue!75,fill=blue!20,minimum size=6mm]
+\tikzstyle{antiplace}=
+[circle,thick,draw=red!75,fill=red!20,minimum size=6mm]
+\tikzstyle{transition}=
+[rectangle,thick,draw=black!75,fill=black!20,minimum size=4mm]
+\tikzstyle{inarrow}=[->, >=stealth, shorten >=.03cm,line width=1.5]
+\tikzstyle{antiarrow}=[<-, red!75,  >=stealth, shorten >=.03cm,line width=1.5]
+
+
+\tikzset{
+	pics/netA/.style args={#1/#2/#3/#4/#5/#6/#7}{code={
+					% \fill[yellow!15] (-0.8,-2.3) rectangle (2.3, 2.3);
+
+					\node [place,label=above:$p_1$, tokens={%
+								#1
+							}] (-pl_1) {};
+
+					\node [transition,label=above:$t$, label=below:#5] (-tr_1) [right = of -pl_1] {};
+
+					\node [place,label=above:$p_2$, tokens={%
+								#2
+							}] (-pl_2) [right = of -tr_1] {};
+
+					\node [transition,label=left:$v$, label=above:#6] (-tr_2) [below = of -tr_1] {};
+					\node [transition,label=below:$u$, label=above:#7] (-tr_3) [below = of -tr_2] {};
+
+					\node [place,label=below:$p_3$, tokens={%
+								#3
+							}] (-pl_3) [left = of -tr_3] {};
+
+					\node [place,label=below:$p_4$, tokens={%
+								#4
+							}] (-pl_4) [right = of -tr_3] {};
+
+					\draw[inarrow] (-pl_1) -- (-tr_1);
+					\draw[inarrow] (-tr_1) -- (-pl_2);
+					\draw[inarrow] (-pl_2) -- (-tr_2);
+					\draw[inarrow] (-tr_2) -- (-pl_3);
+					\draw[inarrow] (-tr_2) -- (-pl_4);
+					\draw[inarrow] (-pl_3) -- (-tr_3);
+					\draw[inarrow] (-tr_3) -- (-pl_4);
+				}}
+}
+
 \begin{document}
 \begin{frame}
   \maketitle
@@ -270,7 +327,61 @@ A book about them needed to be written.
 A Petri net is a certain mathematical model for distributed systems.
 
 A Petri net is a presentation for a free (commutative) monoidal category.
+\begin{center}
+  \begin{tikzpicture}
+		\begin{scope}[xshift=-100]
+			% \begin{pgfonlayer}{nodelayer}
+				\node [place,tokens=0] (1a) at (1.5,1.25) {};
+				\node [place,tokens=0] (1b) at (-0,0) {};
+				\node [place,tokens=0] (3a) at (1.5,0) {};
+				\node[transition] (2a) at (0,1.25) {};
+				\node[transition] (2b) at (0,-1.25) {};
+			% \end{pgfonlayer}
+			% \begin{pgfonlayer}{edgelayer}
+				\draw[style=inarrow, thick] (1a) to (2a);
+				\draw[style=inarrow, thick] (1b) to (2a);
+				\draw[style=inarrow, thick, bend right] (2b) to (1b);
+				\draw[style=inarrow, thick, bend left] (2b) to (1b);
 
+				\draw[style=inarrow, thick, bend left] (2a) to (3a);
+				\draw[style=inarrow, thick, bend left] (3a) to (2b);
+			% \end{pgfonlayer}
+		\end{scope}
+
+		\begin{scope}[xshift=100]
+			% \begin{pgfonlayer}{nodelayer}
+				\node [place,tokens=0] (1a) at (1.5,1.25) {};
+				\node [place,tokens=0] (1b) at (0.5,0) {};
+				\node [place,tokens=0] (3a) at (1.5,0) {};
+				\node [antiplace,tokens=0] (1ax) at (-1.5,1.25) {};
+				\node [antiplace,tokens=0] (1bx) at (-0.5,0) {};
+				\node [antiplace,tokens=0] (3ax) at (-1.5,0) {};
+				\node[transition] (2a) at (0,1.25) {};
+				\node[transition] (2b) at (0,-1.25) {};
+			% \end{pgfonlayer}
+			% \begin{pgfonlayer}{edgelayer}
+				\draw[style=inarrow, thick] (1a) to (2a);
+				\draw[style=inarrow, thick] (1b) to (2a);
+				\draw[style=inarrow, thick, bend right] (2b) to (1b);
+				\draw[style=inarrow, thick] (2b) to (1b);
+
+				\draw[style=inarrow, thick, bend left] (2a) to (3a);
+				\draw[style=inarrow, thick, bend left] (3a) to (2b);
+
+				\draw[style=antiarrow, thick] (1ax) to (2a);
+				\draw[style=antiarrow, thick] (1bx) to (2a);
+				\draw[style=antiarrow, thick] (2b) to (1bx);
+				\draw[style=antiarrow, thick, bend left] (2b) to (1bx);
+
+				\draw[style=antiarrow, thick, bend right] (2a) to (3ax);
+				\draw[style=antiarrow, thick, bend right] (3ax) to (2b);
+			% \end{pgfonlayer}
+		\end{scope}
+
+
+		\draw[style=inarrow, thick] (-1.25,0) -- (1.25,0);
+	\end{tikzpicture}
+\end{center}
 \begin{center}
   Study monoidal categories: you will understand Petri nets.
 \end{center}
@@ -278,10 +389,15 @@ A Petri net is a presentation for a free (commutative) monoidal category.
 \begin{frame}
 Extensions of Petri nets:
 \begin{itemize}
-  \item
-  \item
-  \item
-  \item
+  \item Genovese, Fabrizio, Fosco Loregian, and Daniele Palombi.
+  \alert{A Categorical Semantics for Bounded Petri Nets.}
+   \href{https://arxiv.org/pdf/2101.09100}{arXiv:2101.09100} (2021), ACT2021.
+  \item Genovese, Fabrizio, and Jelle Herold.
+  \alert{A Categorical Semantics for Hierarchical Petri Nets.}
+   \href{https://arxiv.org/pdf/2102.00096}{arXiv:2102.00096} (2021), GCM2021.
+  \item Genovese, Fabrizio, Fosco Loregian, and Daniele Palombi.
+  \alert{Nets with Mana: A Framework for Chemical Reaction Modelling.}
+   ICGT 2021.
 \end{itemize}
 \end{frame}
 %
@@ -306,7 +422,8 @@ Extensions of Petri nets:
   \begin{itemize}
     \item<+-> advisor for master student's thesis: \emph{M. Roselli}, `Categorical linguistics'
     \item<+-> advisor for master student's thesis: T. Massacrier, `Differential Polynomial endofunctors'
-    \item<+-> advisor for master student's thesis:
+
+    {\footnotesize\color{gray!40} based on arXiv:2103.00938\lnk{https://arxiv.org/abs/2103.00938}}
     \item<+-> SIGPLAN's mentor: long-term mentoring program for programming languages researchers.
 
     {\footnotesize\color{gray!40} frequent PRs to the \href{https://github.com/agda/agda-categories}{agda-categories} library}
